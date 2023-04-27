@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Authentication</title>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <h1>Phone Authentication</h1>
+    <div id="recaptcha-container"></div>
+    <button id="send-otp-button">Send OTP</button>
+    <input id="otp-input" type="text" placeholder="Enter OTP" />
+    <button id="verify-otp-button">Verify OTP</button>
+
+    <script>
+      const firebaseConfig = {
+        // Your Firebase config goes here
+        apiKey: "AIzaSyBoKJ9jj9bh6d4hIqBDbD2WdEpzkVvEFMw",
+        authDomain: "phoneauth-68dca.firebaseapp.com",
+        projectId: "phoneauth-68dca",
+        storageBucket: "phoneauth-68dca.appspot.com",
+        messagingSenderId: "18693752874",
+        appId: "1:18693752874:web:0bb1100d04b5b900639b53",
+        measurementId: "G-29XG0P0Z1H"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+<script type="text/javascript">
+
+  window.onload=function(){
+    render();
+  }
+  function render() {
+    
+    window.recaptchaVerifier=new firebase.auth().RecaptchaVerifier('recaptcha-container')
+      recaptchaVerifier.render();
+
+ 
+  }
+
+</script>
+
+
+     
+
+
+
+   
+  </body>
+</html>
